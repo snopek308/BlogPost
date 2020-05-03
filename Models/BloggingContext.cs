@@ -230,7 +230,7 @@ namespace BlogsConsole.Models
             else
             {
                 Console.WriteLine("Not a valid ID. Please pick a valid ID");
-                DeleteBlog();
+                DeletePost();
             }
         }
     }
