@@ -21,8 +21,12 @@ namespace BlogsConsole
                 Console.WriteLine("Enter your selection: ");
                 Console.WriteLine("1) Display all Blogs");
                 Console.WriteLine("2) Add Blog");
-                Console.WriteLine("3) Create Post");
-                Console.WriteLine("4) Display Posts");
+                Console.WriteLine("3) Edit Blog");
+                Console.WriteLine("4) Delete Blog");
+                Console.WriteLine("5) Create Post");
+                Console.WriteLine("6) Display Posts");
+                Console.WriteLine("7) Edit Post");
+                Console.WriteLine("8) Delete Post");
                 Console.WriteLine("Enter q to quit");
                 string response = Console.ReadLine();
 
@@ -45,14 +49,42 @@ namespace BlogsConsole
                     case "3":
                         {
                             var db = new BloggingContext();
-                            db.CreatePost();
+                            db.EditBlog();
                             db.SaveChanges();
                             break;
                         }
                     case "4":
                         {
                             var db = new BloggingContext();
-                            db.DisplayBlogs();
+                            db.DeleteBlog();
+                            db.SaveChanges();
+                            break;
+                        }
+                    case "5":
+                        {
+                            var db = new BloggingContext();
+                            db.CreatePost();
+                            db.SaveChanges();
+                            break;
+                        }
+                    case "6":
+                        {
+                            var db = new BloggingContext();
+                            db.DisplayPosts();
+                            db.SaveChanges();
+                            break;
+                        }
+                    case "7":
+                        {
+                            var db = new BloggingContext();
+                            db.EditPost();
+                            db.SaveChanges();
+                            break;
+                        }
+                    case "8":
+                        {
+                            var db = new BloggingContext();
+                            db.DeletePost();
                             db.SaveChanges();
                             break;
                         }
